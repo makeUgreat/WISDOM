@@ -1,5 +1,6 @@
 import sys
 sys.stdin = open("BAEKJOON/input.txt", "r")
+
 string_list = []
 def repeat(num, *strings):
     for string in strings:
