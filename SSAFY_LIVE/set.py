@@ -55,7 +55,7 @@ print(hash(1))
 print(hash('a'))        # 해쉬가 가변적임 
 print(hash('a'))
 # 그래서 pop을 "무작위"가 아니라 "임의"로 값을 뽑는다고옴
-# "arbitrary" is not mean "random"
+# "arbitrary" not means "random"
 
 # 이러한 해시 가능성은 딕셔너리 키나 세트의 요소 등만 가능. 리스트 같은건 x
 # my_set = {[1,2,3], 1, 2, 3, 4, 5,} unhashable type

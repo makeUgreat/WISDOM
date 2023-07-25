@@ -84,3 +84,53 @@ print(person)
 
 
 
+
+# -----------------------
+
+
+# dictionary - 내부적으로 hash 라는 자료구조를 이용해서 만들어 놓은 자료형
+
+st = {'kevin': 1, 'john': 2, 'bob': 3}
+
+# 키와 벨류를 딕셔너리에 추가
+st['Kate'] = 4
+print(st)
+
+# 키와 벨류를 딕셔너리에서 삭제
+del st['Kate']
+print(st)
+
+# 딕셔너리에 key만 따로 빼오기
+lst = st.keys()
+print(lst)
+print(list(lst)) # 활용하기 좋게 리스트형으로 변환 
+
+# 딕셔너리에 value만 따로 빼오기
+lst = st.values()
+print(list(lst))
+
+
+# 딕셔너리에 있는 key,vlaue 둘 다 빼오기
+lst = st.items()
+print(lst)           # 키값쌍은 튜플로 저장
+print(list(lst))  
+
+# 요소 하나씩 빼고싶을 땐 for문
+for key, value in st.items():
+    print(key, value)
+
+for arg in st.items():
+    print(*arg)            # * 을 이용해 변수 하나로도 언패킹 가능 
+
+
+
+st = {'kevin': 1, 'john': 2, 'bob': 3}
+# print(st['kevinna']) 딕셔너리에 없는 키라면 Error 
+
+# 에러없이 출력하려면
+print(st.get('kevinna'))       # 에러시 기본값 None, 따로 설정가능 
+
+# 딕셔너리 삭제 (del, pop)
+st = {'kevin': 1, 'john': 2, 'bob': 3}
+st = st.pop('kevvvvvvvvvvvvvin', -1)  # pop은 없는 키 뽑으면 에러, 기본값 설정가능
+print(st)
