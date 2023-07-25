@@ -57,7 +57,9 @@ print(hash('a'))
 # 그래서 pop을 "무작위"가 아니라 "임의"로 값을 뽑는다고옴
 # "arbitrary" is not mean "random"
 
-
+# 이러한 해시 가능성은 딕셔너리 키나 세트의 요소 등만 가능. 리스트 같은건 x
+# my_set = {[1,2,3], 1, 2, 3, 4, 5,} unhashable type
+# my_dict = {[1,2,3]: 'a'} unhashable type
 
 
 
@@ -67,4 +69,30 @@ print(hash('a'))
 # .discard(값) 없어도 에러없음
 my_set.add(1)
 print( my_set.discard(4) )
-# 
+
+# 방금 add 메서드는 값 하나만을 추가할 수 있음
+# 여러개를 추가하고 싶으면?
+# .update(iterable)
+
+my_set = {1,2,3}
+my_set.update([4,5,1]) # 꼭 iterable 
+print(my_set)
+
+# 집합 메서드
+set1 = {0,1,2,3,4}
+set2 = {1,3,5,7,9}
+# 차집합, set1 - set2
+print( set1.difference(set2) )
+
+# 교집합, set1 & set2
+print( set1.intersection(set2) )
+
+# 부분집합, set1 <= set2 , set1의 모든 요소가 set2에 포함되어 있으면 True 반환
+print( set1.issubset(set2) )
+
+# 부분집합, set1 >= set2, set1가 set2의 항목을 모두 포함하면 True 반환
+print( set1.issuperset(set2) )
+
+# 합집합, set1 | set2, 두 세트 모두 들어있는 항목으로 세트를 생성
+print( set1.union(set2) ) 
+
