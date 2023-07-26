@@ -11,18 +11,6 @@ def calc(a,b,c):
 
 
 
-
-
-
-
-
-
-
-
-
-def main():
-    a = input_func()
-    b = input_func()
-    c = input_func()
+a, b, c = input_func()
 
 calc(a,b,c)
