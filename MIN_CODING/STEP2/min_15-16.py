@@ -1,21 +1,18 @@
-ch1 = ord(input())
-
+ch1 = ord(input())-1
 
 lsts = [] 
 
-j = 0 # 문자 통제
-k = 0 # 열 통제
-while j <= 4:
-    i = 3 - k 
+j = 2 
+k = 0 
+i = 4
+while i >= 1:
     line = []
-    
-    while i < (6 - (3*j)):   # 6, 3, 0
-
-        line.append(chr(ch1 + i)) 
+    k = i
+    while i <= k+j:
+        line.append(chr(ch1 + i))
         i += 1 
-        
-    j += 1
-    k += 2    
+    j -= 1
+    i = int(i / 2)-1 
     lsts.append(line)
 
 for lst in lsts: 
