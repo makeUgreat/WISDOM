@@ -14,7 +14,18 @@ print(need_days)
 
 
 
+'''
+A, B, V = map(int, input().split())
+x = (V-A) // (A-B)
+y = (V-A) / (A-B)
+if x < y :
+    day = x + 2
+else : 
+    day = x + 1
 
+print(day)
+    
+'''
 
 
 
