@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("BAEKJOON/input.txt", "r")
+sys.stdin = open("BAEKJOON/for_min_input.txt", "r")
 
 string_list = []
 def repeat(num, *strings):

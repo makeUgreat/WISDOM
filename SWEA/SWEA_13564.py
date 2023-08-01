@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('SWEA/input.txt','r')
+sys.stdin = open('SWEA/for_min_input.txt','r')
 
         
 T = int(input())

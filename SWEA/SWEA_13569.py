@@ -7,8 +7,7 @@ for tc in range(1, T+1): # 테스트케이스의 갯수
     index = 0
     for i in range(len(boxes_height)): # box = 각 박스별 높이
         cnt = 0
-        for j in range(len(boxes_height)):
-            if j > i:
+        for j in range(i,len(boxes_height)):  # 혹은 if j > i:
                 if boxes_height[i] > boxes_height[j]:
                     cnt += 1
         cnt_list.append(cnt)

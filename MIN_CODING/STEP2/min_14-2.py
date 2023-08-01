@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('MIN_CODING/input.txt','r')
+sys.stdin = open('MIN_CODING/for_min_input.txt','r')
 
 lsts = [] 
 for i in range(5):

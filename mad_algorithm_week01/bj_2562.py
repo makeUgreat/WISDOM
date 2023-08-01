@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("input.txt", "r")
+sys.stdin = open("for_min_input.txt", "r")
 
 list = []
 for i in range(9):

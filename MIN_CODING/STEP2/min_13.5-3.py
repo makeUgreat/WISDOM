@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("MIN_CODING/input.txt","r")
+sys.stdin = open("MIN_CODING/for_min_input.txt","r")
 
 line_a = list(map(int,input().split()))
 line_b = list(map(int,input().split()))

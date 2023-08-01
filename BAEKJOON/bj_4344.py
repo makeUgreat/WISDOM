@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("BAEKJOON/input.txt", "r")
+sys.stdin = open("BAEKJOON/for_min_input.txt", "r")
 
 def made_avg(n,*scores):
     total = sum(scores)
