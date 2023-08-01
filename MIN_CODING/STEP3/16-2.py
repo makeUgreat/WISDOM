@@ -8,9 +8,9 @@ lsts = [
 ]
 
 # 입력받은 문자가 배열에 있는지 체크
-cnt_ch1 = 0 # 있으면 카운팅
-cnt_ch2 = 0
+cnt = 0 # 있으면 카운팅
 for lst in lsts:
-    cnt_ch1 += lst.count(ch1)
-    cnt_ch2 += lst.count(ch2)
+    cnt += lst.count(ch1)
+    cnt += lst.count(ch2)
 
+print(cnt)
