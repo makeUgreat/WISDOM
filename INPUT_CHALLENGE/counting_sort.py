@@ -6,4 +6,3 @@ for i in range(len(arr)):
     bucket[arr[i]] += 1  # arr의 값 -> bucket의 인덱스 -> 카운트+1
 
 for i in range(len(bucket)):
-jkjjjiljil

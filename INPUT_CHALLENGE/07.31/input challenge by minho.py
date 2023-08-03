@@ -8,6 +8,7 @@ sys.stdin = open("input.txt", "r")
 # hello
 
 # 1.아래에 정답을 입력하시오
+print(input())
 
 
 
@@ -21,6 +22,9 @@ sys.stdin = open("input.txt", "r")
 # 1 2 3
 
 # 2.아래에 정답을 입력하시오
+n = int(input())
+a,b,c = map(int,input().split())
+print(a,b,c)
 
 
 
@@ -33,7 +37,10 @@ sys.stdin = open("input.txt", "r")
 # 1.2 2.3 3.4
 
 # 3.아래에 정답을 입력하시오
-
+f = float(input())
+a,b,c = map(float,input().split())
+print(f)
+print(a,b,c)
 
 
 # 4.한 줄에 있는 공백으로 구분된 단어들을 각각 문자열로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
@@ -43,6 +50,8 @@ sys.stdin = open("input.txt", "r")
 # one two three
 
 # 4.아래에 정답을 입력하시오
+lst = input().split()
+print(*lst)
 
 
 
@@ -54,8 +63,8 @@ sys.stdin = open("input.txt", "r")
 # 1 2 45 43
 
 # 5.아래에 정답을 입력하시오
-
-
+lst = list(map(int,input().split()))
+print(*lst)
 
 # 6.한 줄에 있는 공백없는 한자리 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [1, 2, 3, 4]
@@ -64,8 +73,8 @@ sys.stdin = open("input.txt", "r")
 # 1234
 
 # 6.아래에 정답을 입력하시오
-
-
+lst = list(map(int,input().split()))
+print(*lst,sep='')
 
 # 7.2차원 (N*N) 공백없는 한자리 숫자들을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # N=4
@@ -79,7 +88,13 @@ sys.stdin = open("input.txt", "r")
 # 1000
 
 # 7.아래에 정답을 입력하시오
-
+n = int(input())
+lsts = []
+for _ in range(n):
+    line = list(map(int,input()))
+    lsts.append(line)
+print(n)
+print(lsts)
 
 
 # 8.2차원 (N*N) 정수값을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기 (N값과 arr값)
@@ -94,13 +109,23 @@ sys.stdin = open("input.txt", "r")
 # 13 14 15 16
 
 # 8.아래에 정답을 입력하시오
+n = int(input())
+lsts=[]
 
+for _ in range(n):
+    line = list(map(int,input().split()))
+    lsts.append(line)
+
+for lst in lsts:
+    print(*lst)
 
 
 # 9.(입력값 없음) 0값 10개를 가진 1차원 lst 생성 후 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 # 9.아래에 정답을 입력하시오
+lst = [0]*10
+print(lst)
 
 # 10.(입력값 없음) 0값 3 * 3 개를 가진 2차원 arr생성 후 출력해서 값이 잘 들어갔지 확인해보기
 # arr = [[0, 0, 0],
@@ -108,7 +133,8 @@ sys.stdin = open("input.txt", "r")
 #        [0, 0, 0]]
 
 # 10.아래에 정답을 입력하시오
+lsts = [ [0]*3 for _ in range(3) ]
 
-
+print(lsts)
 
 # print('수고하셨습니다.')
