@@ -1,0 +1,17 @@
+cursor=[
+    "##########"
+    "##########"
+    "###_______"           #(2,3)
+    "__________"
+    "__________"
+]
+
+
+def parametric_search(st,ed):
+    
+	while 1:
+		mid = (st+ed) // 2
+
+		for i in cursor:
+			
+			print(cursor[i])

@@ -12,7 +12,6 @@ print(input())
 
 
 
-
 # 2.정수형 변수 입력 받고 출력해서 확인해보기
 # N = 45
 # A, B, C = 1, 2, 3
@@ -23,8 +22,11 @@ print(input())
 
 # 2.아래에 정답을 입력하시오
 n = int(input())
-a,b,c = map(int,input().split())
+a,b,c =map(int,input().split())
+print(n)
 print(a,b,c)
+
+
 
 
 
@@ -43,6 +45,7 @@ print(f)
 print(a,b,c)
 
 
+
 # 4.한 줄에 있는 공백으로 구분된 단어들을 각각 문자열로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # lst = ['one', 'two', 'three']
 
@@ -50,10 +53,8 @@ print(a,b,c)
 # one two three
 
 # 4.아래에 정답을 입력하시오
-lst = input().split()
-print(*lst)
-
-
+lst = list(input().split())
+print(lst)
 
 # 5.한 줄에 있는 공백으로 구분된 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # (map 함수를 이용하여 문자열을 숫자로 바꾼 후 리스트로 변환)
@@ -63,8 +64,10 @@ print(*lst)
 # 1 2 45 43
 
 # 5.아래에 정답을 입력하시오
+
 lst = list(map(int,input().split()))
 print(*lst)
+
 
 # 6.한 줄에 있는 공백없는 한자리 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [1, 2, 3, 4]
@@ -73,8 +76,10 @@ print(*lst)
 # 1234
 
 # 6.아래에 정답을 입력하시오
-lst = list(map(int,input().split()))
+lst = list(map(int,input()))
 print(*lst,sep='')
+
+
 
 # 7.2차원 (N*N) 공백없는 한자리 숫자들을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # N=4
@@ -88,13 +93,15 @@ print(*lst,sep='')
 # 1000
 
 # 7.아래에 정답을 입력하시오
-n = int(input())
-lsts = []
+n= int(input())
+lst = []
 for _ in range(n):
     line = list(map(int,input()))
-    lsts.append(line)
-print(n)
-print(lsts)
+    lst.append(line)
+
+for ls in lst:
+    print(*ls,sep='')
+
 
 
 # 8.2차원 (N*N) 정수값을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기 (N값과 arr값)
@@ -110,21 +117,21 @@ print(lsts)
 
 # 8.아래에 정답을 입력하시오
 n = int(input())
-lsts=[]
-
+arr = []
 for _ in range(n):
     line = list(map(int,input().split()))
-    lsts.append(line)
+    arr.append(line)
 
-for lst in lsts:
-    print(*lst)
+for ar in arr:
+    print(*ar)
 
 
 # 9.(입력값 없음) 0값 10개를 가진 1차원 lst 생성 후 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 # 9.아래에 정답을 입력하시오
-lst = [0]*10
+
+lst = [0] * 10
 print(lst)
 
 # 10.(입력값 없음) 0값 3 * 3 개를 가진 2차원 arr생성 후 출력해서 값이 잘 들어갔지 확인해보기
@@ -133,8 +140,8 @@ print(lst)
 #        [0, 0, 0]]
 
 # 10.아래에 정답을 입력하시오
-lsts = [ [0]*3 for _ in range(3) ]
+arr = [ [0] * 3 for _ in range(3)]
+print(arr)
 
-print(lsts)
 
 # print('수고하셨습니다.')
