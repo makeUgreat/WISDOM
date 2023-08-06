@@ -10,9 +10,7 @@ tmp = []
 for row in lsts:
     tmp.extend(map(ord,(row)))
 
-print(tmp)
-
-bucket = [0] * (ord('Z') + 1)
+bucket = [0] * (max(tmp) + 1)
 for t in range(len(tmp)):
     bucket[tmp[t]] += 1
 
@@ -20,12 +18,14 @@ for t in range(len(tmp)):
 
 for i in range(1, len(bucket)):
     bucket[i] += bucket[i-1]
-sorted_list = []
+    
+    
+sorted_list = [0] * len(tmp)
 
 
-for i in range(len(bucket)-1,-1,-1):
-    bucket[ tmp[i] ] -= 1
+for element in tmp:
+    bucket[element] -= 1
+    sorted_list[ bucket[element] ] = chr(element)
+    
 
-    sorted_list[bucket[tmp[i]]] = tmp[i]
-
-     
+print(*sorted_list,sep='') 
