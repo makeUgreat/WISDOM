@@ -19,9 +19,6 @@ def masking(y,x):
 
     return Sum
 
-
-
-
 max_sum = -21e8
 max_i = 0
 max_j = 0
