@@ -1,24 +1,11 @@
-def dfs(node, matrix, path, level):
-    if level == 2:
-        for i in range(3):
-            print(path[i],end=' ')
-        print()
-    
-    for i in range(len(matrix)):
-        if matrix[node][i] == 1:
-            path.append(i)
-            dfs(i,matrix,path, level+1)
-            path.pop() 
-    
-     
+# level = 2
+# branch = level + 1]
 
-node = int(input())
-path = []
-matrix = []
+n = int(input()) # 노드의 갯수
 
-for _ in range(node):
+lsts = []
+for i in range(n):
     line = list(map(int,input().split()))
-    matrix.append(line)
-    
-for i in range(node):
-    dfs(i, matrix, [i], 0)
+    lsts.append(line)
+
+

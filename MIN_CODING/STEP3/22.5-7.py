@@ -20,7 +20,6 @@ arr = [[['', '#', ''],
         ['#', '#', '']]]
 
 num = int(input())
-
 line = arr[num] 
 
 
