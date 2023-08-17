@@ -1,32 +1,28 @@
-# # 주사위 n개를 던졌을 때 (입력)
-# # 나올 수 있는 모든 경우의 수를 출력하시오. 
+from collections import deque
 
-# # branch = 6 (주사위 눈 1~6)
-# # level = n 
-
-# n = int(input())
-# path = [0] * n  # 주사위 개수
-
-# def abc(level):
-
-#     if level == n:
-#         for i in range(n):
-#             print(path[i],end=' ')
-#         print()
-#         return
-    
-#     for i in range(6):
-#         path[level] = i + 1
-#         abc(level+1)
-
-# abc(0)
-
-
+name = list(input().split())
 arr = [
-    [1,2,3,4],
-    [5,6,7,8],
-    [9,10,11,12]
+    [0,1,1,0,0,0],
+    [0,0,0,1,1,0],
+    [0,0,0,0,0,1],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0]
 ]
 
-for a in zip(*arr):
-    print(a)
+# 현재위치 now에서 갈 수 있는 곳을 queue에 다 적기
+
+def bfs(now):
+    q = deque()
+    q.append(now)
+    while q: # q가 비어질 때 까지 반복 
+        now = q.popleft()
+        print(name[now],end=' ')
+
+        # now 노드가 갈 수 있는 모든 인접노드를 queue에 저장
+        for i in range(6):
+            if arr[now][i] == 1:
+                q.append(i)
+    
+
+bfs(0) # 0 -> 탐색 시작 index

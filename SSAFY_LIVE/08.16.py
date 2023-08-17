@@ -1,38 +1,25 @@
-from copy import deepcopy
+from collections import deque
+name="ABCD"
+arr=[[0,1,1,0],
+    [0,0,1,1],
+    [0,1,0,1],
+    [0,0,0,0]]
 
-arr = [
-    [6,4,7],
-    [3,3,1],
-    [9,5,8]
-]
+used=[0]*4
+ans=[]
+def bfs(start):
+    global ans
+    q=deque()
+    q.append(start)
 
-arr2 = [
-    [6,4,7],
-    [3,3,1],
-    [9,5,8]
-]
+    while q:
+        now=q.popleft()
+        ans.append(name[now])
+        for i in range(4):
+            if arr[now][i]==1 and used[i]==0:
+                used[i]=1
+                q.append(i)
 
-direction = [ (0,0),(-1,0),(1,0),(0,1),(0,-1)]
-visit = [[0]*3 for _ in range(3)]
-
-
-def dfs(y,x,level):
-    Sum = 0
-    if level == 0:
-        for row in arr:
-            for j in row:
-                Sum += j  
-        
-
-    if level == 3:
-        return Sum
-    
-    for yy,xx in direction:
-        dy = y + yy
-        dx = x + xx 
-
-        if dy<0 or dx<0 or dy>2 or dx>2: continue
-        arr[dy][dx] = (arr[dy][dx]*7) % 10
-
-dfs(1,1,1)
-print(arr)
+used[0]=1 #탐색 시작 인덱스에 해당하는 used에 1체크
+bfs(0)
+print(*ans)
