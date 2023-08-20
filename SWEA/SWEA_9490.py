@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('WISDOM/SWEA/input.txt','r')
+sys.stdin = open('SWEA/input.txt','r')
 
 def deltaSum(y,x,get_arr,value):
     Sum = 0
@@ -8,12 +8,13 @@ def deltaSum(y,x,get_arr,value):
     dirx = [0,0,0,-1,1]
     for j in range(1,value+1):
         for i in range(5):
+            if j > 1 and i == 0: continue
             dy = y + (diry[i] * j)
             dx = x + (dirx[i] * j)
         
             if dy<0 or dx<0 or dy>= n or dx>= m: continue
             Sum += get_arr[dy][dx] 
-        
+    
     return Sum
         
         
