@@ -24,13 +24,13 @@ def com(level,start):
         if path[0]*path[1] <= n:
             if path[0] == path[1]:
                 g_cnt += 1
-                print(f'{path[0]}*{path[1]} -> ',end=' ')
-                print(f'정사각형:{g_cnt}')
+                # print(f'{path[0]}*{path[1]} -> ',end=' ')
+                # print(f'정사각형:{g_cnt}')
                 return
             else:
-                print(f'{path[0]}*{path[1]}')
+                # print(f'{path[0]}*{path[1]}')
                 cnt += 1
-                print(f'직사각형:{cnt}')
+                # print(f'직사각형:{cnt}')
                 return
         return
 
