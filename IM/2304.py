@@ -1,46 +1,38 @@
 import sys
-sys.stdin = open('input.txt','r')
+sys.stdin = open('IM/input.txt','r')
 
 N = int(input())
+arr = [0] * 1001
 
-# 가장 큰 값으로 맵 제작하기
-Map = [['.'] * 20 for _ in range(20)]
-max_L = 0
-max_H = 0
-min_L = 0
-min_H =0
-for _ in range(N):
+max_h = -1
+max_hL = -21e8
+
+last_L = -21e8
+for _ in range(N): 
     L,H = map(int, input().split())
+    if H > max_h:
+        max_h = H 
+        max_hL = L 
+    if L > last_L:
+        last_L = L 
+        
+    arr[L] = H 
 
-    for i in range(H):
-        Map[i][L] = 1
+area = 0
+now = 0
+height = -21e8
 
-    max_L = max(max_L,L)
-    max_H = max(max_H,H)
-    min_L = min(min_L,L)
-    min_H = min(min_H,H)
+for i in range(max_hL+1): # 가장 높은 기둥까지 
+    if arr[i] != 0: # 기둥을 만나고
+        if arr[i] > now: # 그 기둥이 지금까지 가장 높았던 기둥보다 더 높으면
+            now = arr[i] # 가장 높은 기둥을 교체
+    area += now #기둥 면적을 더해간다  
 
-def delta(y,x):
-    diry = [-1,1,0,0]
-    dirx = [0,0,-1,1]
-
-    for i in range(4):
-        dy = y + diry[i]
-        dx = x + dirx[i]
-
-        if dy < 0 or dx <0 or dy>1000 or dx >1000: continue
-        if Map[dy][dx] != '.': continue
-
-        Map[dy][dx] = 0
-
-
-
-print(max_H)
-
-for i in range(max_H+1):
-    for j in range(max_L+1):
-        if Map[i][j] == 1:
-            delta(i,j)
-
-for m in Map:
-    print(*m)
+now = 0
+for k in range(last_L ,max_hL,-1): # 15,8  가장 뒤 부터 가장 높은 기둥까지
+    if arr[k] != 0:
+        if arr[k] > now:
+            now = arr[k]
+    
+    area += now
+print(area) 

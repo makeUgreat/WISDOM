@@ -1,11 +1,7 @@
-A6 A7 11
+A7 A8 7
 T
 T
-T
-T
-R
-R
-R
+L
 R
 R
 R
