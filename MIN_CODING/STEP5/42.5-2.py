@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('input.txt','r')
+
 arr = [ list(input()) for _ in range(4) ]
 # visit = [[False]*4 for _ in range(4)]
 N = int(input())
